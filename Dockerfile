@@ -8,8 +8,10 @@ RUN apt-get install -y nodejs
 WORKDIR /app/
 COPY . . 
 
-RUN dotnet build
 WORKDIR /app/DotnetTemplate.Web/
+RUN dotnet build
 RUN npm install
 RUN npm run build
+RUN npm t
+
 ENTRYPOINT dotnet run
