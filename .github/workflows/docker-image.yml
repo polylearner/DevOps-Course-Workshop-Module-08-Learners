@@ -7,11 +7,10 @@ on:
     branches: [ main ]
  
 jobs:
- 
   build:
- 
+
     runs-on: ubuntu-latest
- 
+
     steps:
     - uses: actions/checkout@v2
     - name: docker login
@@ -21,6 +20,6 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/workshop8
+      run: docker build . --file Dockerfile --tag markmcdevops/workshop8
     - name: Docker push
-      run: docker push ${{secrets.DOCKER_USER}}/workshop8
+      run: docker push markmcdevops/workshop8
