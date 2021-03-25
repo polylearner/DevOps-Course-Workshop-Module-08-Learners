@@ -25,7 +25,7 @@ jobs:
       run: docker push markmcdevops/workshop8
     - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
-      usedocker: true
-      heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-      heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku 
-      heroku_email: ${{secrets.HEROKU_EMAIL}}
+        usedocker: true
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku 
+        heroku_email: ${{secrets.HEROKU_EMAIL}}
